@@ -1,0 +1,23 @@
+from app import app
+from neural_net.core import *
+
+from PIL import Image
+import requests
+from io import BytesIO
+
+@app.route('/')
+def root():
+    return "Malaria API is online!"
+
+
+@app.route('/predict')
+def predict():
+    classes = ['Parasite','Uninfected']
+    model = conv_model('notebooks/malaria_detection.pt')
+    
+    img_response = requests.get('http://s3-us-west-2.amazonaws.com/seround-avatars.com/4c07f769-28d1-4e8c-9f6f-24c412133fa8')
+    # image = './TEST_IMG.png'
+    response = {}
+    response['predict'] = predict_malaria(model, classes, img_response)
+    print(response)
+    return "Worked"
