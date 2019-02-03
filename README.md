@@ -1,6 +1,6 @@
 # Parasite.AI - Neural Network Implementation
 
-This Repo holds the neural network and Python Flask server for the Parasite.AI project, created at MangoHacks 2019
+This Repo holds the neural network and Python Flask server for the Parasite.AI project, created at MangoHacks 2019.
 
 ## Summary
 
